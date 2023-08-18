@@ -1,0 +1,145 @@
+.projectFrame {
+    background: var(--C-BLACK);
+}
+
+.projectsParent {
+    height: calc(100vh - 80px - 40px);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+  
+.projectsParent::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-size: 34px;
+    text-align: center;
+    margin: 20px 0px 80px;
+}
+
+.showcaseFrame, .showcaseFrameR {
+    margin: 30px 20px;
+    display: flex;
+}
+
+.showcaseFrame {
+    flex-direction: row;
+}
+
+.showcaseFrameR {
+    flex-direction: row-reverse;
+}
+
+.showcaseFrame img {
+    border-radius: 7px;
+}
+
+.showcaseRightPanel {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px 0px;
+    width: calc(100% - 560px);
+}
+
+.projectTitle {
+    font-size: 26px;
+    margin: 0px 0px 15px;
+}
+
+.projectDesc {
+    font-size: 15px;
+    max-width: 850px;
+    margin: 0px 0px 20px;
+    text-align: justify;
+}
+
+.projectHighlights {
+    display: flex;
+    flex-direction: row;
+    max-width: 850px;
+    margin: 0px 0px 10px;
+    flex-wrap: wrap;
+}
+
+.projectHighlights > div {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-size: 14px;
+    margin: 5px 3px;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    background: var(--C-ORANGE);
+    color: var(--C-BLACK);
+    font-weight: 500;
+}
+
+.additional {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.version {
+    font-size: 11px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1105px) {
+    .showcaseFrame {
+        flex-direction: column;
+        align-items: center;
+    }
+    .showcaseFrame img {
+        width: 80%;
+        height: auto;
+        max-height: 390px;
+    }
+    .showcaseRightPanel {
+        width: 80%;
+        margin: 20px 0px 40px;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .title {
+        font-size: 27.5px;
+    }
+    .projectTitle {
+        font-size: 23.5px;
+    }
+    .projectDesc {
+        font-size: 14px;
+    }
+    .showcaseFrame img {
+        width: 95%;
+    }
+    .showcaseRightPanel {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .title {
+        font-size: 25px;
+    }
+    .projectTitle {
+        font-size: 23px;
+    }
+    .projectDesc {
+        font-size: 13.5px;
+    }
+    .showcaseFrame img {
+        width: 99%;
+    }
+    .showcaseRightPanel {
+        width: 99%;
+    }
+}

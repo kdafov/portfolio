@@ -1,0 +1,1648 @@
+.main {
+  background: var(--C-BLACK);
+}
+
+.content {
+  height: calc(100vh - 80px - 40px);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content section {
+  height: calc(100vh - 80px - 40px);
+  position: relative;
+  margin: 50px 0px;
+}
+
+.sliderParent {
+  display: flex;
+  flex-direction: row;
+}
+
+.sliderParent section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12.5px;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.sliderParent div {
+  width: 60px;
+  height: 5px;
+  background: var(--C-WHITE);
+  margin: 0px 4px 3px 4px;
+  border-radius: 3px;
+  transition: background-color 1s ease-out;
+}
+
+.sliderParent div.on {
+  background-color: var(--C-PINK);
+}
+
+.sliderParent div.off {
+  background-color: var(--C-WHITE);
+}
+
+@media only screen and (max-width: 500px) {
+  .sliderParent div {
+    width: 45px;
+  }
+  .sliderParent section {
+    font-size: 11px;
+    justify-content: flex-end;
+    padding: 0px 0px 5px 0px;
+  }
+}
+
+@media only screen and (max-width: 310px) {
+  .sliderParent div {
+    width: 33px;
+  }
+  .sliderParent section {
+    font-size: 10px;
+  }
+}
+
+/* ------------------- */
+/* Content settings P1 */
+/* ------------------- */
+
+
+.contentP1 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.intro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 25vh;
+  padding-left: 100px;
+}
+
+.intro > div { 
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  height: 60px;
+}
+
+.mainLabelDupl {
+  position: relative;
+}
+
+.mainLabelDupl > h2, .mainLabelDupl > div {
+  position: absolute;
+}
+
+.mainLabelDupl > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.mainText {
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.subTextsParent {
+  width: 50%;
+  display: flex;
+  flex-direction: column !important;
+}
+
+.subText {
+  font-size: 13.5px;
+  margin: 25px 0px 13px 0px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.refText {
+  font-size: 13px;
+  color: var(--C-PINK);
+  text-transform: capitalize;
+  font-weight: bold;
+  text-align: end;
+  width: 100%;
+}
+
+.imageShowcase {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcaseFrame {
+  width: 0px;
+  height: 0px;
+  border: 3px solid var(--C-WHITE);
+  border-radius: 3px;
+  animation: moveRight 2s linear forwards 2s,
+      openLogoCase 1.5s ease-in forwards 4s,
+      initialRotation 2s ease forwards 9s,
+      postRotation 2s ease forwards 13.5s,
+      lastFlip 0.5s ease forwards 18s,
+      endShowcase 1s ease-out forwards 18s,
+      closeShowcase 1.5s ease-out forwards 22.5s,
+      moveLeft 2s linear forwards 23s;
+} 
+
+.recruitCnnLogo {
+  width: 196px;
+  height: 196px;
+  border-radius: 3px;
+  animation: openImage 1s ease-in forwards 2s;
+  opacity: 0;
+}
+
+.accLogo {
+  width: 94px;
+  height: 94px;
+  border-radius: 3px;
+}
+
+.dcLogo {
+  width: 154px;
+  height: 74px;
+  border-radius: 3px;
+}
+
+@keyframes openImage {
+  0% {
+      opacity: 0
+  }
+  100% {
+      opacity: 1
+  }
+}
+
+@keyframes moveRight {
+  0% {
+      margin-left: 0px;
+  }
+  100% {
+      margin-left: 400px;
+  }
+}
+
+@keyframes openLogoCase {
+  0% {
+      width: 0;
+      height: 0;
+      border-color: var(--C-WHITE);
+  }
+  100% {
+      width: 200px;
+      height: 200px;
+      border-color: var(--C-PINK);
+  }
+}
+
+@keyframes initialRotation {
+  0% {
+    transform: rotate(0deg);
+    border-color: var(--C-PINK);
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    transform: rotate(-45deg);
+    border-color: var(--C-ORANGE);
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes postRotation {
+  0% {
+      transform: rotate(-45deg);
+      border-color: var(--C-ORANGE);
+      width: 100px;
+      height: 100px;
+  }
+  100% {
+      transform: rotate(45deg);
+      border-color: var(--C-PINK);
+      width: 160px;
+      height: 80px;
+  }
+}
+
+@keyframes lastFlip {
+  0% {
+      transform: rotate(45deg);
+      border-color: var(--C-PINK);
+  }
+  100% {
+      transform: rotate(0deg);
+      border-color: var(--C-ORANGE);
+  }
+}
+
+@keyframes endShowcase {
+  0% {
+      width: 160px;
+      height: 80px;
+      border-color: var(--C-ORANGE);
+  }
+  100% {
+      width: 300px;
+      height: 80px;
+      border-color: var(--C-PINK);
+  }
+}
+
+@keyframes closeShowcase {
+  0% {
+      width: 300px;
+      height: 80px;
+      border-color: var(--C-PINK);
+  }
+  100% {
+      width: 0;
+      height: 0;
+      border-color: var(--C-WHITE);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+      margin-left: 400px;
+  }
+  100% {
+      margin-left: 0px;
+  }
+}
+
+.duplHidden {
+  display: flex;
+  align-items: baseline;
+}
+
+.duplHidden h2 {
+  opacity: 0;
+}
+
+.companyText { 
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .mainLabelDupl > div {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1086px) {
+  .mainText {
+    font-size: 37px;
+  }
+  .subText {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .mainText {
+    font-size: 34px;
+  }
+  .subText {
+    font-size: 12.5px;
+    line-height: 18px;
+  }
+  .refText {
+    font-size: 15px;
+  }
+  .mainLabelDupl {
+    width: 82%;
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 647px) {
+  .mainText {
+    font-size: 28px;
+  }
+  .subText {
+    font-size: 12px;
+    line-height: initial;
+  }
+  .refText {
+    font-size: 14px;
+  }
+  .mainLabelDupl {
+    width: 92%;
+  }
+  .intro {
+    top: 12vh;
+    padding-left: 10vw;
+    width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .subTextsParent {
+    width: 80%;
+  }
+  .mainText {
+    font-size: 24.5px;
+  }
+  .subText {
+    margin: 25px 0px 33px 0px;
+  }
+}
+
+@media only screen and (max-width: 308px) {
+  .mainText {
+    font-size: 21px;
+  }
+  .subText {
+    font-size: 11.5px;
+  }
+}
+
+/* --------------------- */
+/* Content for section 2 */
+/* --------------------- */
+
+.skillsTitle {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 400;
+  height: 60px;
+}
+
+.skillsetBottom {
+  height: calc(100% - 60px);
+  display: flex;
+  align-items: center;
+}
+
+.techGalaxyContainer {
+  position: relative;
+  top: 0px;
+  left: 75px;
+  height: 500px;
+  width: 500px;
+}
+
+.innerOrbit {
+  position: absolute;
+  top: 125px;
+  left: 125px;
+  width: 250px;
+  height: 250px;
+  border: 2px var(--C-PINK) dashed;
+  border-radius: 100%;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 20s linear infinite;
+}
+
+.innerOrbitContentL1, .innerOrbitContentL2, .innerOrbitContentL3, .innerOrbitContentL4, .innerOrbitContentL5, .innerOrbitContentL6, .innerOrbitContentL7 {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 0%;
+  background-color: var(--C-BLACK);
+}
+
+.innerOrbitContentL1 {
+  top: 62px;
+  left: -6px;
+}
+
+.innerOrbitContentL2 {
+  top: -14px;
+  left: 122px;
+}
+
+.innerOrbitContentL3 {
+  top: 215px;
+  left: 169px;
+}
+
+.innerOrbitContentL4 {
+  top: 120px;
+  left: 231px;
+}
+
+.innerOrbitContentL5 {
+  top: 153px;
+  left: -7px;
+}
+
+.innerOrbitContentL6 {
+  top: 37px;
+  left: 209px;
+}
+
+.innerOrbitContentL7 {
+  top: 226px;
+  left: 73px;
+}
+
+.middleOrbit {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 380px;
+  height: 380px;
+  border: 2px var(--C-WHITE) dashed;
+  border-radius: 100%;
+  -webkit-animation: spin-right 25s linear infinite;
+  animation: spin-right 25s linear infinite;
+}
+
+.middleOrbitContentL1, .middleOrbitContentL2, .middleOrbitContentL3, .middleOrbitContentL4, .middleOrbitContentL5, .middleOrbitContentL6, .middleOrbitContentL7, .middleOrbitContentL8, .middleOrbitContentL9, .middleOrbitContentL10 {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  border-radius: 0%;
+  background-color: var(--C-BLACK);
+}
+
+.middleOrbitContentL1 {
+  top: 62px;
+  left: 17px;
+}
+
+.middleOrbitContentL2 {
+  top: 217px;
+  left: -12px;
+}
+
+.middleOrbitContentL3 {
+  top: 357px;
+  left: 147px;
+}
+
+.middleOrbitContentL4 {
+  top: 302px;
+  left: 303px;
+}
+
+.middleOrbitContentL5 {
+  top: 165px;
+  left: 359px;
+}
+
+.middleOrbitContentL6 {
+  top: 25px;
+  left: 289px;
+}
+
+.middleOrbitContentL7 {
+  top: -17px;
+  left: 177px;
+}
+
+.middleOrbitContentL8 {
+  top: 0px;
+  left: 87px;
+}
+
+.middleOrbitContentL9 {
+  top: 311px;
+  left: 45px;
+}
+
+.middleOrbitContentL10 {
+  top: 351px;
+  left: 228px;
+}
+
+.outerOrbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 494px;
+  height: 494px;
+  border: 2px var(--C-PINK) dashed;
+  border-radius: 100%;
+  -webkit-animation: spin-right 30s linear infinite;
+  animation: spin-right 30s linear infinite;
+}
+
+.outerOrbitContentL1, .outerOrbitContentL2, .outerOrbitContentL3, .outerOrbitContentL4, .outerOrbitContentL5, .outerOrbitContentL6, .outerOrbitContentL7, .outerOrbitContentL8, .outerOrbitContentL9, .outerOrbitContentL10, .outerOrbitContentL11, .outerOrbitContentL12, .outerOrbitContentL13 {
+  position: absolute;
+  height: 42px;
+  width: 42px;
+  border-radius: 0%;
+  background-color: var(--C-BLACK);
+}
+
+.outerOrbitContentL1 {
+  top: 40px;
+  left: 63px;
+}
+
+.outerOrbitContentL2 {
+  top: 122px;
+  left: 0px;
+}
+
+.outerOrbitContentL3 {
+  top: 341px;
+  left: 9px;
+}
+
+.outerOrbitContentL4 {
+  top: 432px;
+  left: 92px;
+}
+
+.outerOrbitContentL5 {
+  top: 469px;
+  left: 260px;
+}
+
+.outerOrbitContentL6 {
+  top: 346px;
+  left: 438px;
+}
+
+.outerOrbitContentL7 {
+  top: 240px;
+  left: 468px;
+}
+
+.outerOrbitContentL8 {
+  top: 110px;
+  left: 443px;
+}
+
+.outerOrbitContentL9 {
+  top: 24px;
+  left: 366px;
+}
+
+.outerOrbitContentL10 {
+  top: 387px;
+  left: 407px;
+}
+
+.outerOrbitContentL11 {
+  top: -14px;
+  left: 280px;
+}
+
+.outerOrbitContentL12 {
+  top: 230px;
+  left: -23px;
+}
+
+.outerOrbitContentL13 {
+  top: -14px;
+  left: 160px;
+}
+
+@keyframes spin-right {
+  100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+.outerOrbitContentL11, .outerOrbitContentL2, .middleOrbitContentL8, .middleOrbitContentL3, .middleOrbitContentL2, .innerOrbitContentL3 {
+  background: var(--C-WHITE);
+  border-radius: 50%;
+}
+
+.rightSideSkillset { 
+  display: flex;
+  flex-direction: column;
+  right: 50px;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.skillsetIndividual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skillsetTitle {
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+.skillsetSubText {
+  font-size: 13px;
+  font-style: italic;
+  margin: 5px 0px 30px;
+}
+
+.skillsetUL {
+  font-size: 14px;
+}
+
+.skillsetUL li {
+  padding: 2px 0px;
+}
+
+.inactive {
+  display: none;
+}
+
+.certParent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.certParent > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.certParent span {
+  font-size: 13.5px;
+  padding: 7px 0px 0px;
+  max-width: 210px;
+  text-align: center;
+}
+
+.innerOrbitContentL1R, .innerOrbitContentL2R, .innerOrbitContentL3R, .innerOrbitContentL4R, .innerOrbitContentL5R, .innerOrbitContentL6R, .innerOrbitContentL7R {
+  display: none;
+}
+
+@media only screen and (max-width: 1308px) {
+  .techGalaxyContainer {
+    left: 50px;
+    height: 390px;
+    width: 390px;
+    /* background: red; */
+  }
+  .innerOrbit {
+    width: 140px;
+    height: 140px;
+  }
+  .innerOrbitContentL1, .innerOrbitContentL2, .innerOrbitContentL3, .innerOrbitContentL4, .innerOrbitContentL5, .innerOrbitContentL6, .innerOrbitContentL7 {
+    height: 27px;
+    width: 27px;
+  }
+  
+  .innerOrbitContentL1 {
+    top: 62px;
+    left: -14px;
+  }
+  
+  .innerOrbitContentL2 {
+    top: 4px;
+    left: 10px;
+  }
+  
+  .innerOrbitContentL3 {
+    top: -14px;
+    left: 68px;
+  }
+  
+  .innerOrbitContentL4 {
+    top: 26px;
+    left: 118px;
+  }
+  
+  .innerOrbitContentL5 {
+    top: 116px;
+    left: 23px;
+  }
+  
+  .innerOrbitContentL6 {
+    top: 82px;
+    left: 114px;
+  }
+  
+  .innerOrbitContentL7 {
+    top: 117px;
+    left: 79px;
+  }
+  .middleOrbit {
+    width: 270px;
+    height: 270px;
+  }
+  .middleOrbitContentL1, .middleOrbitContentL2, .middleOrbitContentL3, .middleOrbitContentL4, .middleOrbitContentL5, .middleOrbitContentL6, .middleOrbitContentL7, .middleOrbitContentL8, .middleOrbitContentL9, .middleOrbitContentL10 {
+    height: 32px;
+    width: 32px;
+  }
+  .middleOrbitContentL1 {
+    top: 39.85px;
+    left: 10.22px;
+  }
+  
+  .middleOrbitContentL2 {
+    top: 122.15px;
+    left: -15.43px;
+  }
+  
+  .middleOrbitContentL3 {
+    top: 247.47px;
+    left: 83.11px;
+  }
+  
+  .middleOrbitContentL4 {
+    top: 190.25px;
+    left: 231.96px;
+  }
+  
+  .middleOrbitContentL5 {
+    top: 112.41px;
+    left: 251.15px;
+  }
+  
+  .middleOrbitContentL6 {
+    top: 31.11px;
+    left: 222.08px;
+  }
+  
+  .middleOrbitContentL7 {
+    top: -11.79px;
+    left: 151.17px;
+  }
+  
+  .middleOrbitContentL8 {
+    top: -11px;
+    left: 71.82px;
+  }
+  
+  .middleOrbitContentL9 {
+    top: 202.51px;
+    left: 13.33px;
+  }
+  
+  .middleOrbitContentL10 {
+    top: 240.93px;
+    left: 166.64px;
+  }
+
+  .outerOrbit {
+    width: 384px;
+    height: 384px;
+  }
+  .outerOrbitContentL1, .outerOrbitContentL2, .outerOrbitContentL3, .outerOrbitContentL4, .outerOrbitContentL5, .outerOrbitContentL6, .outerOrbitContentL7, .outerOrbitContentL8, .outerOrbitContentL9, .outerOrbitContentL10, .outerOrbitContentL11, .outerOrbitContentL12, .outerOrbitContentL13 {
+    height: 37px;
+    width: 37px;
+  }
+  .outerOrbitContentL1 {
+    top: 17px;
+    left: 63px;
+  }
+  
+  .outerOrbitContentL2 {
+    top: 102px;
+    left: -7px;
+  }
+  
+  .outerOrbitContentL3 {
+    top: 300px;
+    left: 30px;
+  }
+  
+  .outerOrbitContentL4 {
+    top: 354px;
+    left: 119px;
+  }
+  
+  .outerOrbitContentL5 {
+    top: 351px;
+    left: 235px;
+  }
+  
+  .outerOrbitContentL7 {
+    top: 217px;
+    left: 358px;
+  }
+  
+  .outerOrbitContentL8 {
+    top: 130px;
+    left: 358px;
+  }
+  
+  .outerOrbitContentL9 {
+    top: 49px;
+    left: 320px;
+  }
+  
+  .outerOrbitContentL10 {
+    top: 295px;
+    left: 314px;
+  }
+  
+  .outerOrbitContentL11 {
+    top: -4px;
+    left: 248px;
+  }
+  
+  .outerOrbitContentL12 {
+    top: 200px;
+    left: -17px;
+  }
+  
+  .outerOrbitContentL13 {
+    top: -20px;
+    left: 159px;
+  }
+  
+  .skillsetTitle {
+    font-size: 19.5px;
+  }
+  .skillsetSubText {
+    font-size: 12px;
+  }
+  .skillsetUL {
+    font-size: 12.5px;
+  }
+  .certParent > div img {
+    height: 46px;
+    width: 46px;
+  }
+  .certParent > div span {
+    font-size: 12.5px;
+  }
+  .skillsTitle {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (max-width: 1066px) {
+  .techGalaxyContainer {
+    left: 20px;
+    height: 265px;
+    width: 265px;
+    /* background: red; */
+  }
+  .innerOrbit {
+    display: none !important;
+  }
+  .innerOrbitContentL1, .innerOrbitContentL2, .innerOrbitContentL3, .innerOrbitContentL4, .innerOrbitContentL5, .innerOrbitContentL6, .innerOrbitContentL7 {
+    display: none !important;
+  }
+  .innerOrbitContentL1R, .innerOrbitContentL2R, .innerOrbitContentL3R, .innerOrbitContentL4R, .innerOrbitContentL5R, .innerOrbitContentL6R, .innerOrbitContentL7R {
+    display: inherit;
+    position: absolute;
+    height: 32px;
+    width: 32px;
+  }
+  
+  .innerOrbitContentL1R {
+    top: 17px;
+    left: 196px;
+  }
+  
+  .innerOrbitContentL2R {
+    top: 50px;
+    left: 222px;
+  }
+  
+  .innerOrbitContentL3R {
+    top: 86px;
+    left: 239px;
+  }
+  
+  .innerOrbitContentL4R {
+    top: 126px;
+    left: 239px;
+  }
+  
+  .innerOrbitContentL5R {
+    top: 237px;
+    left: 79px;
+  }
+  
+  .innerOrbitContentL6R {
+    top: 70px;
+    left: -14px;
+  }
+  
+  .innerOrbitContentL7R {
+    top: 45px;
+    left: 2px;
+  }
+  .middleOrbit {
+    width: 145px;
+    height: 145px;
+  }
+  .middleOrbitContentL1, .middleOrbitContentL2, .middleOrbitContentL3, .middleOrbitContentL4, .middleOrbitContentL5, .middleOrbitContentL6, .middleOrbitContentL7, .middleOrbitContentL8, .middleOrbitContentL9, .middleOrbitContentL10 {
+    height: 27px;
+    width: 27px;
+  }
+  .middleOrbitContentL1 {
+    top: 11.85px;
+    left: 3.22px;
+  }
+  
+  .middleOrbitContentL2 {
+    top: 52.15px;
+    left: -12.43px;
+  }
+  
+  .middleOrbitContentL3 {
+    top: 104.47px;
+    left: 4.11px;
+  }
+  
+  .middleOrbitContentL4 {
+    top: 17.25px;
+    left: 114.96px;
+  }
+  
+  .middleOrbitContentL5 {
+    top: 128.41px;
+    left: 47.15px;
+  }
+  
+  .middleOrbitContentL6 {
+    top: 121.11px;
+    left: 85.08px;
+  }
+  
+  .middleOrbitContentL7 {
+    top: 57.79px;
+    left: 128.17px;
+  }
+  
+  .middleOrbitContentL8 {
+    top: -12px;
+    left: 40.82px;
+  }
+  
+  .middleOrbitContentL9 {
+    top: 95.51px;
+    left: 117.33px;
+  }
+  
+  .middleOrbitContentL10 {
+    top: -9.93px;
+    left: 83.64px;
+  }
+
+  .outerOrbit {
+    width: 260px;
+    height: 260px;
+  }
+  .outerOrbitContentL1, .outerOrbitContentL2, .outerOrbitContentL3, .outerOrbitContentL4, .outerOrbitContentL5, .outerOrbitContentL6, .outerOrbitContentL7, .outerOrbitContentL8, .outerOrbitContentL9, .outerOrbitContentL10, .outerOrbitContentL11, .outerOrbitContentL12, .outerOrbitContentL13 {
+    height: 32px;
+    width: 32px;
+  }
+  .outerOrbitContentL1 {
+    top: -9px;
+    left: 70px;
+  }
+  
+  .outerOrbitContentL2 {
+    top: 14px;
+    left: 34px;
+  }
+  
+  .outerOrbitContentL3 {
+    top: 114px;
+    left: -16px;
+  }
+  
+  .outerOrbitContentL4 {
+    top: 155px;
+    left: -8px;
+  }
+  
+  .outerOrbitContentL5 {
+    top: 194px;
+    left: 13px;
+  }
+  
+  .outerOrbitContentL7 {
+    top: 220px;
+    left: 43px;
+  }
+  
+  .outerOrbitContentL8 {
+    top: 241px;
+    left: 118px;
+  }
+  
+  .outerOrbitContentL9 {
+    top: 231px;
+    left: 156px;
+  }
+  
+  .outerOrbitContentL10 {
+    top: 206px;
+    left: 199px;
+  }
+  
+  .outerOrbitContentL11 {
+    top: 169px;
+    left: 229px;
+  }
+  
+  .outerOrbitContentL12 {
+    top: -17px;
+    left: 113px;
+  }
+  
+  .outerOrbitContentL13 {
+    top: -11px;
+    left: 159px;
+  }
+  .innerOrbitContentL3R, .innerOrbitContentL5R {
+    background: var(--C-WHITE);
+    border-radius: 50%;
+  }
+  .skillsetTitle {
+    font-size: 17.5px;
+  }
+  .skillsetSubText {
+    font-size: 11.5px;
+  }
+  .skillsetUL {
+    font-size: 12px;
+  }
+  .certParent > div img {
+    height: 37px;
+    width: 37px;
+  }
+  .certParent > div span {
+    font-size: 12px;
+  }
+  .skillsTitle {
+    font-size: 28.5px;
+  }
+  .rightSideSkillset {
+    right: 20px;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .skillsetBottom {
+    flex-direction: column;
+  }
+  .techGalaxyContainer {
+    top: 50px;
+    left: 0px;
+  }
+  .rightSideSkillset {
+    width: 100%;
+    right: 0;
+    justify-content: flex-start;
+    top: 375px;
+  }
+  .certParent {
+    margin: 40px 0px 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .skillsTitle {
+    font-size: 25.5px;
+  }
+  .skillsetTitle {
+    font-size: 15.5px;
+  }
+  .skillsetSubText {
+    font-size: 11.5px;
+  }
+  .skillsetUL {
+    font-size: 12px;
+  }
+  .certParent > div img {
+    height: 34px;
+    width: 34px;
+  }
+  .certParent > div span {
+    font-size: 11.5px;
+  }
+  .rightSideSkillset > div {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .skillsTitle {
+    font-size: 19.5px;
+  }
+  .skillsetTitle {
+    font-size: 14.5px;
+  }
+  .certParent > div img {
+    height: 30px;
+    width: 30px;
+  }
+  .certParent > div span {
+    font-size: 10.5px;
+  }
+}
+
+/* --------------------- */
+/* Content for section 3 */
+/* --------------------- */
+.skillsSubTitle {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.reviewsSlider {
+  display: flex;
+  flex-direction: row;
+  margin: 85px 30px 0px;
+  justify-content: space-evenly;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 15px 0px;
+  width: calc(100% - 60px);
+  height: 310px;
+}
+
+.reviewsEach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  overflow-y: hidden;
+  user-select: none;
+}
+
+.reviewsTitle {
+  color: var(--C-PINK);
+  text-transform: capitalize;
+  font-size: 22px;
+  text-align: center;
+}
+
+.reviewsSub {
+  font-style: italic;
+  font-size: 12.5px;
+  margin: 0px 0px 15px;
+}
+
+.reviewsText {
+  text-align: justify;
+  font-size: 14.5px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.newReview {
+  font-size: 35px;
+  font-weight: 200;
+  border: 1px dashed;
+  border-radius: 100%;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding-bottom: 4px;
+  right: 9px;
+  top: 8px;
+  cursor: pointer;
+  border-color: var(--C-PINK);
+}
+
+.reviewsHide {
+  display: none;
+}
+
+.overlayReviews {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background: rgba(27, 32, 33, 0.7);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlayReviews > div {
+  height: 500px;
+  width: 400px;
+  border: 3px solid #0072e5;
+  background: var(--C-WHITE);
+  border-radius: 10px;
+}
+
+.overlayReviewsOff {
+  display: none;
+}
+
+.overlayCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  color: var(--C-BLACK);
+  align-items: flex-start;
+}
+
+.overlayCloseBtn span {
+  padding: 10px 0px 0px 20px;
+  text-transform: uppercase;
+}
+
+.overlayCnt {
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0px 20px;
+}
+
+.factsRoot {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 10px;
+  margin: 70px 0px 0px;
+}
+
+.factsParent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.factsIndividual {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid;
+  border-radius: 13px;
+  align-items: center;
+  margin: 25px 20px;
+  padding: 5px 15px;
+  width: 350px;
+}
+
+.factsIndividual div {
+  display: flex;
+  flex-direction: column;
+}
+
+.factsIndividual img {
+  padding-right: 7px;
+}
+
+.factsMainFont {
+  font-size: 18.5px;
+  font-weight: 300;
+  padding-bottom: 3px;
+}
+
+.factsSubFont {
+  font-size: 11.5px;
+  font-weight: 200;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 879px) {
+  .reviewsTitle {
+    font-size: 19.5px;
+  }
+  .reviewsSub {
+    font-size: 11.5px;
+  }
+  .reviewsText {
+    font-size: 13px;
+  }
+  .factsMainFont {
+    font-size: 17px;
+  }
+  .factsSubFont {
+    font-size: 11.5px;
+  }
+  .skillsSubTitle {
+    font-size: 12.5px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .reviewsSlider {
+    flex-direction: column;
+    height: 480px;
+    align-items: center;
+    margin: 25px 25px 0px;
+  }
+  .reviewsEach {
+    width: 95%;
+  }
+  .reviewsText {
+    font-size: 12.5px;
+    font-weight: 200;
+  }
+  .factsMainFont {
+    font-size: 15px;
+  }
+  .factsRoot {
+    margin: 15px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 635px) {
+  .factsSubFont {
+    display: none;
+  }
+  .factsMainFont {
+    font-size: 13px;
+  }
+  .reviewsEach {
+    height: 30%;
+  }
+  .skillsSubTitle {
+    font-size: 11.5px;
+    padding: 15px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .factsParent {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .factsIndividual {
+    margin: 7px 20px;
+    padding: 3px 10px;
+    width: 270px;
+  }
+  .factsIndividual img {
+    height: 34px;
+    width: 34px;
+  }
+  .factsMixDisplayL {
+    margin-right: calc(100% - 280px);
+  }
+  .factsMixDisplayR {
+    margin-left: calc(100% - 280px);
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .reviewsTitle {
+    font-size: 15.5px;
+  }
+  .reviewsSub {
+    font-size: 11.5px;
+  }
+  .reviewsText {
+    font-size: 12px;
+  }
+  .factsMainFont {
+    font-size: 12.5px;
+  }
+  .skillsSubTitle {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .factsMixDisplayL {
+    margin-right: 0px
+  }
+  .factsMixDisplayR {
+    margin-left: 0px
+  }
+  .factsIndividual {
+    margin: 7px 20px;
+    padding: 3px 10px;
+    width: 95%;
+  }
+}
+
+/* ------- ------ */
+/* Section 4 CSS */
+/* ------------ */
+.s4 {
+  margin: 100px 0px 40px !important;
+}
+
+.contactSubText {
+  font-size: 20px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.formRoot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formTopParent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px 0px 30px;
+}
+
+.formTopIndividual, .formTopIndividualActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--C-PINK);
+  border-radius: 10px;
+  width: 220px;
+  height: 65px;
+  border: 2px solid;
+  cursor: pointer;
+  transition: background ease-in-out 0.4s;
+}
+
+.formTopIndividual {
+  background: linear-gradient(to right, var(--C-PINK) 0%, var(--C-BLACK) 5%, var(--C-BLACK) 95%, var(--C-PINK) 100%);
+}
+
+.formTopIndividual:hover, .formTopIndividualActive {
+  background: var(--C-WHITE);
+}
+
+.formBottomParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 20px 0px 30px;
+  padding: 0px 30px;
+}
+
+.formBottomH1 {
+  border-width: 0px 1px 0px;
+  border-style: solid;
+  padding: 0px 10px;
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--C-PINK);
+}
+
+.formBottomSpan {
+  font-size: 12px;
+  max-width: 750px;
+  margin: 10px 0px 0px;
+  font-style: italic;
+  text-align: center;
+}
+
+.formBottomFrame {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 25px 0px 5px;
+  background: var(--C-WHITE);
+  border-radius: 5px;
+}
+
+.formFieldsParent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.formFieldsParent > div { 
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+}
+
+.socialsRoot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1200px;
+  padding: 0px 30px;
+  width: 100%;
+  margin: 30px 0px 0px;
+  align-items: center;
+}
+
+.socialsIndividual {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.socialsIndividual span {
+  padding-left: 7px;
+}
+
+.socialsCVSecond {
+  display: flex;
+  flex-direction: row;
+  padding: 6px 3px;
+  background: var(--C-WHITE);
+  border-radius: 7px;
+}
+
+.socialsCVContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.socialsCVContainer, .socialsCVSecond {
+  width: 302px;
+}
+
+@media only screen and (max-width: 1036px) {
+  .s4 {
+    margin: 150px 0px 40px !important;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .contactSubText {
+    font-size: 18px;
+    text-align: center;
+  }
+  .formTopIndividual, .formTopIndividualActive {
+    width: 29%;
+    font-size: 14px;
+  }
+  .socialsRoot {
+    flex-direction: column;
+  }
+  .socialsRoot a, .socialsRoot > div {
+    margin: 5px 0px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .contactSubText {
+    font-size: 15px;
+  }
+  .formTopIndividual, .formTopIndividualActive {
+    height: 85px;
+    text-align: center;
+    justify-content: center;
+  }
+  .formBottomSpan {
+    font-size: 11px;
+  }
+  .formFieldsParent {
+    flex-direction: column;
+  }
+  .formFieldsParent > div {
+    width: 100%;
+  }
+  .socialsRoot {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .contactSubText {
+    font-size: 13px;
+  }
+  .formTopIndividual, .formTopIndividualActive {
+    height: 50px;
+  }
+  .formTopIndividual img, .formTopIndividualActive img {
+    display: none;
+  }
+  .socialsCVSecond {
+    width: 260px;
+  }
+}
+
+/* 
+Mobile devices support for content
+*/
+
+@media only screen and (max-width: 767px) {
+  .content section {
+    height: max(100vh, 830px);
+  }
+}

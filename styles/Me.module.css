@@ -1,0 +1,40 @@
+.initialDiv {
+    margin: 40px 20px;
+}
+
+.initialDiv input {
+    margin: 0px 10px;
+}
+
+.verifySpan {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 13px;
+}
+
+.revEach {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    border: 1px solid;
+    padding: 3px;
+    margin: 10px 0px;
+}
+
+.btns {
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    margin: 10px 0px;
+}
+
+.btnFrame {
+    display: flex;
+    justify-content: space-around;
+}
+
+.masterTitle {
+    font-size: 32px;
+    margin: 20px 0px;
+}

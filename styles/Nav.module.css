@@ -1,0 +1,62 @@
+.nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.contactBtn {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 7px 2px 5px 2px;
+    border-color: var(--C-WHITE);
+    border-width: 1px;
+    background: var(--C-BLACK);
+    cursor: pointer;
+    transition: color 0.4s ease-in-out, border-color 0.4s ease-in, border-radius 0.4s ease-in;
+}
+
+.hoverLink {
+    transition: color 0.3s ease, letter-spacing 0.4s ease-in;
+    padding: 0px 20px;
+    font-size: 16px;
+}
+
+.contactBtn:hover {
+    color: var(--C-PINK);
+    border-color: var(--C-PINK);
+    border-radius: 7px 5px 5px 5px;
+}
+
+.hoverLink:hover {
+    color: var(--C-PINK);
+    letter-spacing: 0.4px;
+}
+
+@media only screen and (max-width: 500px) {
+    .contactBtn {
+      font-size: 11.5px;
+    }
+    .hoverLink {
+      font-size: 12.5px;
+    }
+    .nav img {
+      height: 60px;
+      width: 60px;
+    }
+  }
+  
+  @media only screen and (max-width: 310px) {
+    .contactBtn {
+      font-size: 11px;
+      padding: 7px 9px;
+    }
+    .hoverLink {
+      font-size: 11.5px;
+    }
+    .nav img {
+      height: 44px;
+      width: 44px;
+    }
+  }
